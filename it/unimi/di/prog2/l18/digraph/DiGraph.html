@@ -1,0 +1,505 @@
+<!DOCTYPE HTML>
+<!-- NewPage -->
+<html lang="en">
+<head>
+<title>DiGraph (drafts API)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../../../../../../stylesheet.css" title="Style">
+<link rel="stylesheet" type="text/css" href="../../../../../../jquery/jquery-ui.css" title="Style">
+<script type="text/javascript" src="../../../../../../script.js"></script>
+<script type="text/javascript" src="../../../../../../jquery/jszip/dist/jszip.min.js"></script>
+<script type="text/javascript" src="../../../../../../jquery/jszip-utils/dist/jszip-utils.min.js"></script>
+<!--[if IE]>
+<script type="text/javascript" src="../../../../../../jquery/jszip-utils/dist/jszip-utils-ie.min.js"></script>
+<![endif]-->
+<script type="text/javascript" src="../../../../../../jquery/jquery-3.4.1.js"></script>
+<script type="text/javascript" src="../../../../../../jquery/jquery-ui.js"></script>
+</head>
+<body>
+<script type="text/javascript"><!--
+    try {
+        if (location.href.indexOf('is-external=true') == -1) {
+            parent.document.title="DiGraph (drafts API)";
+        }
+    }
+    catch(err) {
+    }
+//-->
+var data = {"i0":18,"i1":18,"i2":18,"i3":18,"i4":18,"i5":18,"i6":18,"i7":6,"i8":18,"i9":18};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],16:["t5","Default Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
+var pathtoroot = "../../../../../../";
+var useModuleDirectories = true;
+loadScripts(document, 'script');</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+<header role="banner">
+<nav role="navigation">
+<div class="fixedNav">
+<!-- ========= START OF TOP NAVBAR ======= -->
+<div class="topNav"><a id="navbar.top">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.top" title="Skip navigation links">Skip navigation links</a></div>
+<a id="navbar.top.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../../index.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../../help-doc.html">Help</a></li>
+</ul>
+</div>
+<div class="subNav">
+<ul class="navList" id="allclasses_navbar_top">
+<li><a href="../../../../../../allclasses.html">All&nbsp;Classes</a></li>
+</ul>
+<ul class="navListSearch">
+<li><label for="search">SEARCH:</label>
+<input type="text" id="search" value="search" disabled="disabled">
+<input type="reset" id="reset" value="reset" disabled="disabled">
+</li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_top");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a id="skip.navbar.top">
+<!--   -->
+</a></div>
+<!-- ========= END OF TOP NAVBAR ========= -->
+</div>
+<div class="navPadding">&nbsp;</div>
+<script type="text/javascript"><!--
+$('.navPadding').css('padding-top', $('.fixedNav').css("height"));
+//-->
+</script>
+</nav>
+</header>
+<!-- ======== START OF CLASS DATA ======== -->
+<main role="main">
+<div class="header">
+<div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html">it.unimi.di.prog2.l18.digraph</a></div>
+<h2 title="Interface DiGraph" class="title">Interface DiGraph&lt;T&gt;</h2>
+</div>
+<div class="contentContainer">
+<div class="description">
+<ul class="blockList">
+<li class="blockList">
+<dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>T</code> - the type of the graph nodes.</dd>
+</dl>
+<dl>
+<dt>All Known Implementing Classes:</dt>
+<dd><code><a href="AdjacencyMapDiGraph.html" title="class in it.unimi.di.prog2.l18.digraph">AdjacencyMapDiGraph</a></code>, <code><a href="ArcListDiGraph.html" title="class in it.unimi.di.prog2.l18.digraph">ArcListDiGraph</a></code>, <code><a href="ImplicitDiGraph.html" title="class in it.unimi.di.prog2.l18.digraph">ImplicitDiGraph</a></code></dd>
+</dl>
+<hr>
+<pre>public interface <span class="typeNameLabel">DiGraph&lt;T&gt;</span></pre>
+<div class="block">An interface representing an <em>directed graph</em> where nodes are of generic type <code>T</code>.
+
+ <p>A directed graph \( G = (N, A) \) is a pair where \( N \) is a finite set of <em>nodes</em>
+ (of type <code>T</code>) and \(A = \{(x, y) : x, y \in N \} \) is the set of <em>arcs</em> that are
+ ordered pairs of elements of \( N \); the first element of and arc is called <em>source</em>, and
+ the second one is called <em>destination</em>. Given a node \( x \in N \), the set of
+ <em>outgoing</em> nodes of \( x \) is the set \(\{y : (x, y) \in A \} \).
+
+ <p>Classes implementing this interface can represent both <em>immutable</em> and <em>mutable</em>
+ directed graphs, default implementations of mutation methods <a href="#addNode(T)"><code>addNode(Object)</code></a> and <a href="#addArc(T,T)"><code>addArc(Object, Object)</code></a> rise <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/UnsupportedOperationException.html?is-external=true" title="class or interface in java.lang" class="externalLink"><code>UnsupportedOperationException</code></a> (while the default
+ implementation of <a href="#addArc(it.unimi.di.prog2.l18.digraph.Arc)"><code>addArc(Arc)</code></a> relies on <a href="#addArc(T,T)"><code>addArc(Object, Object)</code></a>).
+
+ <p>Every implementation must at least override <a href="#nodes()"><code>nodes()</code></a>; moreover, since <a href="#arcs()"><code>arcs()</code></a>
+ has a default implementation in terms of such method and <a href="#outgoing(T)"><code>outgoing(Object)</code></a>, and
+ conversely <a href="#outgoing(T)"><code>outgoing(Object)</code></a> has a default implementation in terms of <a href="#arcs()"><code>arcs()</code></a>, at
+ least one of these two methods must be overridden. All other methods have default implementations
+ based on <a href="#outgoing(T)"><code>outgoing(Object)</code></a> and/or <a href="#arcs()"><code>arcs()</code></a>.</div>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========== METHOD SUMMARY =========== -->
+<section role="region">
+<ul class="blockList">
+<li class="blockList"><a id="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t5" class="tableTab"><span><a href="javascript:show(16);">Default Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colSecond" scope="col">Method</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>default void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addArc(it.unimi.di.prog2.l18.digraph.Arc)">addArc</a></span>&#8203;(<a href="Arc.html" title="class in it.unimi.di.prog2.l18.digraph">Arc</a>&lt;<a href="DiGraph.html" title="type parameter in DiGraph">T</a>&gt;&nbsp;arc)</code></th>
+<td class="colLast">
+<div class="block">Adds an arc to this graph.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>default void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addArc(T,T)">addArc</a></span>&#8203;(<a href="DiGraph.html" title="type parameter in DiGraph">T</a>&nbsp;source,
+      <a href="DiGraph.html" title="type parameter in DiGraph">T</a>&nbsp;destination)</code></th>
+<td class="colLast">
+<div class="block">Adds an arc to this graph.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>default void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addNode(T)">addNode</a></span>&#8203;(<a href="DiGraph.html" title="type parameter in DiGraph">T</a>&nbsp;node)</code></th>
+<td class="colLast">
+<div class="block">Adds a node to this graph.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>default <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="Arc.html" title="class in it.unimi.di.prog2.l18.digraph">Arc</a>&lt;<a href="DiGraph.html" title="type parameter in DiGraph">T</a>&gt;&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#arcs()">arcs</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns this graph arcs.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>default boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasArc(it.unimi.di.prog2.l18.digraph.Arc)">hasArc</a></span>&#8203;(<a href="Arc.html" title="class in it.unimi.di.prog2.l18.digraph">Arc</a>&lt;<a href="DiGraph.html" title="type parameter in DiGraph">T</a>&gt;&nbsp;arc)</code></th>
+<td class="colLast">
+<div class="block">Tells whether an arc belongs to this graph, or not.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>default boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasArc(T,T)">hasArc</a></span>&#8203;(<a href="DiGraph.html" title="type parameter in DiGraph">T</a>&nbsp;source,
+      <a href="DiGraph.html" title="type parameter in DiGraph">T</a>&nbsp;destination)</code></th>
+<td class="colLast">
+<div class="block">Tells whether an arc belongs to this graph, or not.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>default boolean</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hasNode(T)">hasNode</a></span>&#8203;(<a href="DiGraph.html" title="type parameter in DiGraph">T</a>&nbsp;node)</code></th>
+<td class="colLast">
+<div class="block">Tells whether a node belongs to this graph, or not.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="DiGraph.html" title="type parameter in DiGraph">T</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#nodes()">nodes</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Returns the graph nodes.</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>default <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="DiGraph.html" title="type parameter in DiGraph">T</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#outgoing(T)">outgoing</a></span>&#8203;(<a href="DiGraph.html" title="type parameter in DiGraph">T</a>&nbsp;source)</code></th>
+<td class="colLast">
+<div class="block">Returns the set of outgoing nodes of a given node.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>default void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#visit(T,java.util.function.Consumer,java.util.function.Supplier)">visit</a></span>&#8203;(<a href="DiGraph.html" title="type parameter in DiGraph">T</a>&nbsp;start,
+     <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Consumer.html?is-external=true" title="class or interface in java.util.function" class="externalLink">Consumer</a>&lt;<a href="DiGraph.html" title="type parameter in DiGraph">T</a>&gt;&nbsp;consumer,
+     <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Supplier.html?is-external=true" title="class or interface in java.util.function" class="externalLink">Supplier</a>&lt;? extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Queue.html?is-external=true" title="class or interface in java.util" class="externalLink">Queue</a>&lt;<a href="DiGraph.html" title="type parameter in DiGraph">T</a>&gt;&gt;&nbsp;supplier)</code></th>
+<td class="colLast">
+<div class="block">Performs a visit on the graph.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ METHOD DETAIL ========== -->
+<section role="region">
+<ul class="blockList">
+<li class="blockList"><a id="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a id="nodes()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>nodes</h4>
+<pre class="methodSignature"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="DiGraph.html" title="type parameter in DiGraph">T</a>&gt;&nbsp;nodes()</pre>
+<div class="block">Returns the graph nodes.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the graph nodes.</dd>
+</dl>
+</li>
+</ul>
+<a id="outgoing(java.lang.Object)">
+<!--   -->
+</a><a id="outgoing(T)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>outgoing</h4>
+<pre class="methodSignature">default&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="DiGraph.html" title="type parameter in DiGraph">T</a>&gt;&nbsp;outgoing&#8203;(<a href="DiGraph.html" title="type parameter in DiGraph">T</a>&nbsp;source)</pre>
+<div class="block">Returns the set of outgoing nodes of a given node.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source</code> - the source node.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the nodes that have an arc with the given <code>source</code> in this graph (the collection
+     is empty if the <code>source</code> does not belong to this graph).</dd>
+</dl>
+</li>
+</ul>
+<a id="addNode(java.lang.Object)">
+<!--   -->
+</a><a id="addNode(T)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addNode</h4>
+<pre class="methodSignature">default&nbsp;void&nbsp;addNode&#8203;(<a href="DiGraph.html" title="type parameter in DiGraph">T</a>&nbsp;node)</pre>
+<div class="block">Adds a node to this graph.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>node</code> - the node to be added.</dd>
+</dl>
+</li>
+</ul>
+<a id="addArc(java.lang.Object,java.lang.Object)">
+<!--   -->
+</a><a id="addArc(T,T)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addArc</h4>
+<pre class="methodSignature">default&nbsp;void&nbsp;addArc&#8203;(<a href="DiGraph.html" title="type parameter in DiGraph">T</a>&nbsp;source,
+                    <a href="DiGraph.html" title="type parameter in DiGraph">T</a>&nbsp;destination)</pre>
+<div class="block">Adds an arc to this graph.
+
+ <p>It the source, or destination, node are not present in the graph, they are also added.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source</code> - the source of the arc to be added.</dd>
+<dd><code>destination</code> - the destination of the arc to be added.</dd>
+</dl>
+</li>
+</ul>
+<a id="addArc(it.unimi.di.prog2.l18.digraph.Arc)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addArc</h4>
+<pre class="methodSignature">default&nbsp;void&nbsp;addArc&#8203;(<a href="Arc.html" title="class in it.unimi.di.prog2.l18.digraph">Arc</a>&lt;<a href="DiGraph.html" title="type parameter in DiGraph">T</a>&gt;&nbsp;arc)</pre>
+<div class="block">Adds an arc to this graph.
+
+ <p>It the source, or destination, node are not present in the graph, they are also added.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>arc</code> - the arc to be added.</dd>
+</dl>
+</li>
+</ul>
+<a id="hasArc(java.lang.Object,java.lang.Object)">
+<!--   -->
+</a><a id="hasArc(T,T)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hasArc</h4>
+<pre class="methodSignature">default&nbsp;boolean&nbsp;hasArc&#8203;(<a href="DiGraph.html" title="type parameter in DiGraph">T</a>&nbsp;source,
+                       <a href="DiGraph.html" title="type parameter in DiGraph">T</a>&nbsp;destination)</pre>
+<div class="block">Tells whether an arc belongs to this graph, or not.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>source</code> - the source of the arc to be queried.</dd>
+<dd><code>destination</code> - the destination of the arc to be queried.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>whether the arc belongs to the graph, or not.</dd>
+</dl>
+</li>
+</ul>
+<a id="hasArc(it.unimi.di.prog2.l18.digraph.Arc)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hasArc</h4>
+<pre class="methodSignature">default&nbsp;boolean&nbsp;hasArc&#8203;(<a href="Arc.html" title="class in it.unimi.di.prog2.l18.digraph">Arc</a>&lt;<a href="DiGraph.html" title="type parameter in DiGraph">T</a>&gt;&nbsp;arc)</pre>
+<div class="block">Tells whether an arc belongs to this graph, or not.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>arc</code> - the arc to be queried.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>whether the arc belongs to the graph, or not.</dd>
+</dl>
+</li>
+</ul>
+<a id="hasNode(java.lang.Object)">
+<!--   -->
+</a><a id="hasNode(T)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>hasNode</h4>
+<pre class="methodSignature">default&nbsp;boolean&nbsp;hasNode&#8203;(<a href="DiGraph.html" title="type parameter in DiGraph">T</a>&nbsp;node)</pre>
+<div class="block">Tells whether a node belongs to this graph, or not.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>node</code> - the node to be queried.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>whether the node belongs to the graph, or not.</dd>
+</dl>
+</li>
+</ul>
+<a id="arcs()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>arcs</h4>
+<pre class="methodSignature">default&nbsp;<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Set.html?is-external=true" title="class or interface in java.util" class="externalLink">Set</a>&lt;<a href="Arc.html" title="class in it.unimi.di.prog2.l18.digraph">Arc</a>&lt;<a href="DiGraph.html" title="type parameter in DiGraph">T</a>&gt;&gt;&nbsp;arcs()</pre>
+<div class="block">Returns this graph arcs.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>the arcs belonging to this graph.</dd>
+</dl>
+</li>
+</ul>
+<a id="visit(java.lang.Object,java.util.function.Consumer,java.util.function.Supplier)">
+<!--   -->
+</a><a id="visit(T,java.util.function.Consumer,java.util.function.Supplier)">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>visit</h4>
+<pre class="methodSignature">default&nbsp;void&nbsp;visit&#8203;(<a href="DiGraph.html" title="type parameter in DiGraph">T</a>&nbsp;start,
+                   <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Consumer.html?is-external=true" title="class or interface in java.util.function" class="externalLink">Consumer</a>&lt;<a href="DiGraph.html" title="type parameter in DiGraph">T</a>&gt;&nbsp;consumer,
+                   <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Supplier.html?is-external=true" title="class or interface in java.util.function" class="externalLink">Supplier</a>&lt;? extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Queue.html?is-external=true" title="class or interface in java.util" class="externalLink">Queue</a>&lt;<a href="DiGraph.html" title="type parameter in DiGraph">T</a>&gt;&gt;&nbsp;supplier)</pre>
+<div class="block">Performs a visit on the graph.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>start</code> - the not where the visit must start.</dd>
+<dd><code>consumer</code> - a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Consumer.html?is-external=true" title="class or interface in java.util.function" class="externalLink"><code>Consumer</code></a> that will be called on every visited node.</dd>
+<dd><code>supplier</code> - a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/function/Supplier.html?is-external=true" title="class or interface in java.util.function" class="externalLink"><code>Supplier</code></a> providing the <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Queue.html?is-external=true" title="class or interface in java.util" class="externalLink"><code>Queue</code></a> to be used to perform the visit.</dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</div>
+</div>
+</main>
+<!-- ========= END OF CLASS DATA ========= -->
+<footer role="contentinfo">
+<nav role="navigation">
+<!-- ======= START OF BOTTOM NAVBAR ====== -->
+<div class="bottomNav"><a id="navbar.bottom">
+<!--   -->
+</a>
+<div class="skipNav"><a href="#skip.navbar.bottom" title="Skip navigation links">Skip navigation links</a></div>
+<a id="navbar.bottom.firstrow">
+<!--   -->
+</a>
+<ul class="navList" title="Navigation">
+<li><a href="../../../../../../index.html">Overview</a></li>
+<li><a href="package-summary.html">Package</a></li>
+<li class="navBarCell1Rev">Class</li>
+<li><a href="package-tree.html">Tree</a></li>
+<li><a href="../../../../../../deprecated-list.html">Deprecated</a></li>
+<li><a href="../../../../../../index-all.html">Index</a></li>
+<li><a href="../../../../../../help-doc.html">Help</a></li>
+</ul>
+<div class="aboutLanguage"><script type='text/javascript' src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script></div>
+</div>
+<div class="subNav">
+<ul class="navList" id="allclasses_navbar_bottom">
+<li><a href="../../../../../../allclasses.html">All&nbsp;Classes</a></li>
+</ul>
+<div>
+<script type="text/javascript"><!--
+  allClassesLink = document.getElementById("allclasses_navbar_bottom");
+  if(window==top) {
+    allClassesLink.style.display = "block";
+  }
+  else {
+    allClassesLink.style.display = "none";
+  }
+  //-->
+</script>
+<noscript>
+<div>JavaScript is disabled on your browser.</div>
+</noscript>
+</div>
+<div>
+<ul class="subNavList">
+<li>Summary:&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.summary">Method</a></li>
+</ul>
+<ul class="subNavList">
+<li>Detail:&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
+<li>Constr&nbsp;|&nbsp;</li>
+<li><a href="#method.detail">Method</a></li>
+</ul>
+</div>
+<a id="skip.navbar.bottom">
+<!--   -->
+</a></div>
+<!-- ======== END OF BOTTOM NAVBAR ======= -->
+</nav>
+</footer>
+</body>
+</html>
